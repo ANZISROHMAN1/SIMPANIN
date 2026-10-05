@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMPANIN - Penyimpanan File Aman</title>
+    <meta name="description" content="Kelola file, dokumen, dan foto Anda dengan aman menggunakan SIMPANIN.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Top Navbar -->
+        <header class="top-nav">
+            <div class="logo">
+                <img src="logo-white.jpg" alt="SIMPANIN Logo" class="app-logo">
+                <span>SIMPANIN</span>
+            </div>
+            <div class="search-bar">
+                <i data-lucide="search"></i>
+                <input type="text" placeholder="Cari file, folder...">
+            </div>
+            <div class="user-actions">
+                <button class="icon-btn notification-btn" id="notif-btn">
+                    <i data-lucide="bell"></i>
+                    <span class="badge" id="notif-badge" style="display: none;">0</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="main-layout">
+            <!-- Left Sidebar -->
+            <aside class="sidebar-left">
+                <div class="sidebar-top">
+                    <div class="upload-section" style="margin-bottom: 1.5rem;">
+                        <button class="btn btn-primary" id="uploadBtn" style="width: 100%;"><i data-lucide="upload-cloud"></i> Unggah File</button>
+                        <input type="file" id="fileInput" style="display: none;">
+                    </div>
+                    <nav class="nav-links">
+                        <a href="#" class="nav-item active"><i data-lucide="layout-dashboard"></i> Dasbor</a>
+                    </nav>
+                </div>
+
+
+            </aside>
+
+            <!-- Main Content -->
+            <main class="content-area">
+                <h1 class="section-title">Akses Cepat</h1>
+                <div class="quick-access-grid">
+                    <div class="folder-card">
+                        <div class="folder-icon blue"><i data-lucide="file-text"></i></div>
+                        <div class="folder-details">
+                            <h3>Dokumen</h3>
+                            <p>124 Files &bull; 1.2 GB</p>
+                        </div>
+                    </div>
+                    <div class="folder-card">
+                        <div class="folder-icon purple"><i data-lucide="image"></i></div>
+                        <div class="folder-details">
+                            <h3>Foto</h3>
+                            <p>840 Files &bull; 4.5 GB</p>
+                        </div>
+                    </div>
+                    <div class="folder-card">
+                        <div class="folder-icon orange"><i data-lucide="archive"></i></div>
+                        <div class="folder-details">
+                            <h3>Arsip</h3>
+                            <p>32 Files &bull; 450 MB</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="section-title">Daftar File</h2>
+                <div class="file-table-container">
+                    <table class="file-table">
+                        <thead>
+                            <tr>
+                                <th>Nama</th>
+                                <th>Ukuran</th>
+                                <th>Dimodifikasi</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="file-row active-row">
+                                <td class="file-name">
+                                    <div class="icon red"><i data-lucide="file-type-2"></i></div>
+                                    <span>Laporan.pdf</span>
+                                </td>
+                                <td>2.4 MB</td>
+                                <td>04 Okt 2026</td>
+                                <td>
+                                    <button class="action-btn"><i data-lucide="more-horizontal"></i></button>
+                                </td>
+                            </tr>
+                            <tr class="file-row">
+                                <td class="file-name">
+                                    <div class="icon green"><i data-lucide="image"></i></div>
+                                    <span>Banner.png</span>
+                                </td>
+                                <td>5.1 MB</td>
+                                <td>03 Okt 2026</td>
+                                <td>
+                                    <button class="action-btn"><i data-lucide="more-horizontal"></i></button>
+                                </td>
+                            </tr>
+                            <tr class="file-row">
+                                <td class="file-name">
+                                    <div class="icon green"><i data-lucide="table"></i></div>
+                                    <span>Keuangan.xlsx</span>
+                                </td>
+                                <td>850 KB</td>
+                                <td>01 Okt 2026</td>
+                                <td>
+                                    <button class="action-btn"><i data-lucide="more-horizontal"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+
+            <!-- Right Sidebar -->
+            <aside class="sidebar-right">
+                <div class="file-detail-header">
+                    <h2>Detail File</h2>
+                </div>
+                
+                <div class="file-preview">
+                    <i data-lucide="file-type-2" class="preview-icon"></i>
+                </div>
+                
+                <div class="file-info-list">
+                    <div class="info-item">
+                        <span class="info-label">Nama</span>
+                        <span class="info-value">Laporan.pdf</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Ukuran</span>
+                        <span class="info-value">2.4 MB</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Tipe</span>
+                        <span class="info-value">Dokumen PDF</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Dibuat</span>
+                        <span class="info-value">04 Okt 2026</span>
+                    </div>
+                </div>
+
+                <div class="file-actions">
+                    <button class="btn btn-primary" id="download-btn"><i data-lucide="download"></i> Unduh</button>
+                    <button class="btn btn-secondary" id="rename-btn"><i data-lucide="edit-2"></i> Ganti Nama</button>
+                    <button class="btn btn-danger" id="delete-btn"><i data-lucide="trash"></i> Hapus</button>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
